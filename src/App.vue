@@ -4,7 +4,7 @@
     <div class="topBar">
       <b-container fluid="sm">
         <div class="flex alignCenter">
-          <h4 style="color: orange">BATGAME</h4>
+          <img alt="batgame logo" src="./assets/batgame.png" class="batgame">
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
           <div id="topBarRight" class="flex gap24">
             <div>
@@ -95,12 +95,12 @@
     <!-- footer -->
     <div class="footer">
       <div class="flex alignCenter gap24">
-        <span class="batgame">BATGAME</span>
+        <img alt="batgame logo" src="./assets/batgame.png" class="batgame">
         <span class="copyright">Copyright batgame.id ©. 2022 Rights Reserved</span>
       </div>
       <div class="flex gap24">
-        <div class="logo" />
-        <div class="logo" />
+        <img alt="iso logo" src="./assets/iso.png" class="logo zoom">
+        <img alt="kominfo logo" src="./assets/kominfo.png" class="logo">
       </div>
     </div>
   </div>
@@ -150,7 +150,7 @@ export default {
   color: #2c3e50;
   min-height: 100vh;
   height: 100%;
-  background-image: url('@/assets/background.jpg');
+  background-image: url('@/assets/purplebg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -218,16 +218,15 @@ export default {
   color: white;
 }
 .batgame {
-  color: orange;
-  font-size: 28px;
-  font-weight: bold;
+  width: 150px;
 }
 .logo {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,114,1) 35%, rgba(255,0,41,1) 100%);
-  border-radius: 30px;
   height: 60px;
   width: 60px;
+  overflow: hidden;
+}
+.zoom {
+  transform: scale(1.2)
 }
 .media {
   min-width: 532px;
@@ -240,10 +239,10 @@ export default {
   color: white;
 }
 .recomendation {
-  width: 60%;
-  min-width: 210px;
   background: rgb(4, 0, 66);
   border-radius: 10px;
+  min-width: 210px;
+  width: 60%;
 }
 
 @media only screen and (min-width: 2000px) {
@@ -280,7 +279,7 @@ export default {
     height: 30px;
   }
   .batgame {
-    font-size: 20px;
+    width: 100px
   }
   .copyright {
     font-size: 12px;
