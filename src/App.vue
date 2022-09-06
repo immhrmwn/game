@@ -17,7 +17,7 @@
                 <span class="title" style="display: block; color: silver;">Token Platinum</span>
                 <span class="subtitle" style="display: block; font-weight: bold">1.000.000 Pt</span>
               </div>
-              <b-button class="button title" style="font-weight: bold">TOP UP</b-button>
+              <b-button @click="topUp" class="button title" style="font-weight: bold">TOP UP</b-button>
             </div>
             <div class="flex alignCenter gap">
               <CurrencyDollarIcon  size="2x" style="color: gold;"/>
@@ -25,7 +25,7 @@
                 <span class="title" style="display: block; color: orange;">Winning Platinum</span>
                 <span class="subtitle" style="display: block; color: gold; font-weight: bold">1.000.000 Pt</span>
               </div>
-              <b-button class="btnOrange title" style="font-weight: bold">TUKAR</b-button>
+              <b-button @click="change" class="btnOrange title" style="font-weight: bold">TUKAR</b-button>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
     <!-- Content -->
     <b-container style="margin-bottom: 100px" >
       <div class="content">
-        <h2>{{data.name}} <ShareIcon  size="0.75x" style="color: silver;"/></h2>
+        <h2>{{data.name}} <ShareIcon @click="share"  size="0.75x" class="share"/></h2>
         <div class="flex gap24" style="margin-bottom: 24px;">
           <div class="media">
             <b-img :src="data.thumbnail" fluid alt="Responsive image"></b-img>
@@ -46,7 +46,7 @@
             <p>{{data.description}}</p>
             <div>
               <div style="display: flex; gap: 24px">
-                <b-button class="btnOrange" style="font-weight: bold">PLAY <CurrencyDollarIcon  size="1.5x"/>10</b-button>{{' '}}
+                <b-button @click="play" class="btnOrange" style="font-weight: bold">PLAY <CurrencyDollarIcon  size="1.5x"/>10</b-button>{{' '}}
                 <a :href="data.tutorial_game_url" target="_blank" style="color: inherit; font-size: 20px;">Play Demo</a>
               </div>
             </div>
@@ -124,7 +124,20 @@ export default {
     CurrencyDollarIcon,
     GiftIcon
   },
-  methods: {},
+  methods: {
+    share: function () {
+      console.log('share')
+    },
+    play: function () {
+      console.log('play')
+    },
+    topUp: function () {
+      console.log('topUp')
+    },
+    change: function () {
+      console.log('tukar')
+    },
+  },
   computed: {}
 }
 </script>
@@ -186,6 +199,9 @@ export default {
 .btnOrange:hover {
   background-color: orange;
   opacity: 0.8;
+}
+.share {
+  cursor: pointer
 }
 .title {
   font-size: 12px;
